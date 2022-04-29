@@ -13,7 +13,7 @@
     position: relative;
   }
   .movie-card:hover {
-   background-color: rgb(205, 194, 194);
+   background-color: yellow;
   }
   
   .movie-image {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MovieCard from './MovieCard';
-import movies from '../api';
+// import movies from '../api';
 
 class MoviesContainer extends Component{
 
@@ -9,15 +9,16 @@ class MoviesContainer extends Component{
     }
 
     componentDidMount(){
-        fetch("http://www.omdbapi.com/?i=tt3896198&apikey=efef40b6")
+        fetch("https://api.themoviedb.org/3/movie/550?api_key=1f441d16d9e32be5307f53437c47ba03")
         .then(resp => resp.json())
-        .then(movies => this.setState({
-            movies: movies
+        .then(data => this.setState({
+            movies: data
         }))
     }
 
     render(){
-        const movieObjs = movies.map((movie) => <MovieCard key={movie.title} movie={movie}></MovieCard>)
+
+        const {movies} = this.state;
 
         return (
             <div>
@@ -26,7 +27,9 @@ class MoviesContainer extends Component{
                     <input type="text" placeholder="Search a movie..." />
                     <button>Go</button>
                 </div>
-                {movieObjs}
+                <div>
+                    <h3>{movies.title}</h3>
+                </div>
             </div>
         );
     }

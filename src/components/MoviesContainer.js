@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MovieCard from './MovieCard';
-// import movies from '../api';
 
 class MoviesContainer extends Component{
 
@@ -18,8 +17,6 @@ class MoviesContainer extends Component{
 
     render(){
 
-        const {movies} = this.state;
-
         return (
             <div>
                 <h2>Movie Database</h2>
@@ -28,7 +25,7 @@ class MoviesContainer extends Component{
                     <button>Go</button>
                 </div>
                 <div>
-                    <h3>{movies.title}</h3>
+                    <MovieCard movie={this.state.movies}></MovieCard>
                 </div>
             </div>
         );

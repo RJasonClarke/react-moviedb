@@ -1,12 +1,11 @@
 import React from 'react';
 
 const MovieCard = (props) => {
-    const {title, image, release_date} = props.movie
+    const {title, tagline} = props.movie
     return (
-        <div className="movie-card" id="movie-1">
-            <img src={image} alt="movie-poster" className="movie-image"/>
+        <div className="movie-card" id={title}>
             <h3>{title}</h3>
-            <h4>{release_date}</h4>
+            <h4>{tagline}</h4>
         </div>
     );
 };

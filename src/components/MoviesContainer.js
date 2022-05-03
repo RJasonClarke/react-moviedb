@@ -17,6 +17,8 @@ class MoviesContainer extends Component{
 
     render(){
 
+        console.log(this.state.movies)
+
         return (
             <div>
                 <h2>Movie Database</h2>

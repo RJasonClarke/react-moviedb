@@ -8,16 +8,16 @@ class MoviesContainer extends Component{
     }
 
     componentDidMount(){
-        fetch("https://api.themoviedb.org/3/movie/540?api_key=1f441d16d9e32be5307f53437c47ba03")
+        fetch("https://api.themoviedb.org/3/movie/popular?api_key=1f441d16d9e32be5307f53437c47ba03&language=en-US&page=1")
         .then(resp => resp.json())
         .then(data => this.setState({
-            movies: data
+            movies: data.results
         }))
     }
 
     render(){
 
-        console.log(this.state.movies)
+        const mapMovies = this.state.movies.map(movie => <MovieCard key={movie.title} movie={movie}></MovieCard>)
 
         return (
             <div>
@@ -27,7 +27,7 @@ class MoviesContainer extends Component{
                     <button>Go</button>
                 </div>
                 <div>
-                    <MovieCard movie={this.state.movies}></MovieCard>
+                    {mapMovies}
                 </div>
             </div>
         );

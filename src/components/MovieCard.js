@@ -1,7 +1,8 @@
 import React from 'react';
 
-const MovieCard = (props) => {
-    const {title, poster_path, tagline, overview} = props.movie
+export default ({title, poster_path, tagline, overview}) => {
+
+    console.log(title)
     return (
         <div className="movie-card" id={title}>
             <h3>{title}</h3>
@@ -11,5 +12,3 @@ const MovieCard = (props) => {
         </div>
     );
 };
-
-export default MovieCard;

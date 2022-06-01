@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 .movie-container {
     text-align: center;
   }
@@ -10,9 +14,6 @@
     display: inline-grid;
     margin: 1rem 2rem;
     position: relative;
-  }
-  .movie-card:hover {
-   background-color: yellow;
   }
   
   .movie-image {
@@ -35,4 +36,28 @@
     background-color: pink;
     border-radius: 12px;
     border: 2px solid #c40d0d;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: 40px;
+    padding-left: 20px;
+  }
+
+  .logo img {
+    height: 100%;
+  }
+
+  .user-icon {
+    height: 40px;
+    padding-right: 20px;
+  }
+
+  .user-icon img{
+    height: 100%;
+    border-radius: 5px;
   }

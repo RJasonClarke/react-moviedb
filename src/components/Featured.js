@@ -1,9 +1,11 @@
 import React from "react";
 
-export default () => {
+const Featured = () => {
     return(
-        <div>
-            <h1>Hello</h1>
+        <div className="featured-container">
+            <h1>Featured goes here...</h1>
         </div>
-    )
-}
+    );
+};
+
+export default Featured;

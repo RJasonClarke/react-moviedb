@@ -9,14 +9,14 @@ import Row from "./components/Row";
 class App extends Component{
 
   state = {
-    movies: []
+    featured: []
   }
 
   componentDidMount(){
     fetch("https://api.themoviedb.org/3/movie/popular?api_key=1f441d16d9e32be5307f53437c47ba03")
     .then(resp => resp.json())
     .then(data => this.setState({
-      movies: data.results
+      featured: data.results
     }))
 }
 
@@ -24,7 +24,7 @@ class App extends Component{
     return (
       <div>
         <Header></Header>
-        <Featured props={this.state.movies}></Featured>
+        <Featured props={this.state.featured}></Featured>
         <Row></Row>
       </div>
     );

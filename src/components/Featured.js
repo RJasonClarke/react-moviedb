@@ -1,9 +1,13 @@
-import React from "react";
+import React from 'react';
 
-const Featured = () => {
-    return(
-        <div className="featured-container">
+const Featured = ({props}) => {
+
+    console.log(props)
+
+    return (
+        <div>
             <h1>Featured goes here...</h1>
+            {props.map(movie => <li>{movie.title}</li>)}
         </div>
     );
 };

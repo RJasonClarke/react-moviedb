@@ -23,7 +23,7 @@ class App extends Component{
 
   randomFeatured = () => {
     let i = Math.floor(Math.random(this.state.featured) * 20)
-     return this.state.featured[i]
+    return this.state.featured[i]
   }
 
   render(){

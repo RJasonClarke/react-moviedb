@@ -1,21 +1,28 @@
 import React from 'react';
 
-const Featured = ({props}) => {
-    return (
-        <div>
-            {props.map(movie =>
-                    <div key={movie.id}>
-                        <h2>{movie.title}</h2>
-                        <span>{movie.vote_average} {movie.release_date.split("").slice(0, -6).join("")}</span>
-                        <p>{movie.overview}</p>
+const Featured = (props) => {
+
+    if(props.props === undefined){
+        return(
+            <div>
+            </div>
+        )
+    } else {
+        return (
+            <section className='featured'>
+                <div>
+                    <img src={`https://image.tmdb.org/t/p/original${props.props.backdrop_path}`} alt={props.props.title}/>
+                    <h1>{props.props.title}</h1>
+                    <span>{props.props.vote_average} points {props.props.release_date.split("").slice(0, -6).join("")}</span>
+                        <p>{props.props.overview}</p>
                         <span>
                             <button>Play</button>
                             <button>+ My List</button>
                         </span>
-                    </div>
-                )}
-        </div>
-    );
+                </div>
+            </section>
+        );
+    }
 };
 
 export default Featured;

@@ -1,6 +1,8 @@
 body {
   background-color: black;
   color: white;
+  margin: 0;
+  font-family: Roboto,sans-serif;
 }
 
 .movie-container {
@@ -24,24 +26,19 @@ body {
     width: 150px;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .like-bttn {
-      border-radius: 12px;
-      border: 2px solid #c40d0d;
-      width: 75px;
-      margin-left: 35%;
-  }
-  
-  .like-bttn:hover {
-    background-color: pink;
-    border-radius: 12px;
-    border: 2px solid #c40d0d;
+    padding: 30px;
+    height: 60px;
   }
 
   header {
     display: flex;
     justify-content: space-between;
+    background-color: transparent;
+    position: fixed;
+    left: 0;
+    right: 0;
+    align-items: center;
+    height: 60px;
   }
 
   .logo {
@@ -61,4 +58,8 @@ body {
   .user-icon img{
     height: 100%;
     border-radius: 5px;
+  }
+
+  .featured > img {
+    background-size: cover;
   }

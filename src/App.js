@@ -18,9 +18,12 @@ class App extends Component{
     .then(data => this.setState({
       featured: data.results
     }))
-}
+  }
 
   render(){
+
+    console.log(this.state.featured)
+
     return (
       <div>
         <Header></Header>

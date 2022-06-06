@@ -1,28 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Test extends Component {
+const Test = (props) => {
 
-    state = {
-        pies: [
-                {
-                    name: "Pie1"
-                },
-                {
-                    name: "Pie2"
-                }
-        ]
-    }
-
-    render() {
-
-        console.log(this.state)
-
-        return (
-            <div>
-                <h1>{this.state.pies.map(pie => <li>{pie.name}</li>)}</h1>
-            </div>
-        );
-    }
-}
+    console.log({props})
+    return (
+        <div key={props.props.id}>
+                        <h2>{props.props.title}</h2>
+                        <span>{props.props.vote_average} {props.props.release_date.split("").slice(0, -6).join("")}</span>
+                        <p>{props.props.overview}</p>
+                        <span>
+                            <button>Play</button>
+                            <button>+ My List</button>
+                        </span>
+                    </div>
+    );
+};
 
 export default Test;

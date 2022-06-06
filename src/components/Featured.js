@@ -1,13 +1,10 @@
 import React from 'react';
 
 const Featured = ({props}) => {
-
-    console.log(props)
-
     return (
         <div>
             {props.map(movie =>
-                    <div>
+                    <div key={movie.id}>
                         <h2>{movie.title}</h2>
                         <span>{movie.vote_average} {movie.release_date.split("").slice(0, -6).join("")}</span>
                         <p>{movie.overview}</p>

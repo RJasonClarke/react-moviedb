@@ -10,15 +10,18 @@ const Featured = (props) => {
     } else {
         return (
             <section className='featured'>
-                <div>
-                    <img src={`https://image.tmdb.org/t/p/original${props.props.backdrop_path}`} alt={props.props.title}/>
-                    <h1>{props.props.title}</h1>
-                    <span>{props.props.vote_average} points {props.props.release_date.split("").slice(0, -6).join("")}</span>
-                        <p>{props.props.overview}</p>
-                        <span>
-                            <button>Play</button>
-                            <button>+ My List</button>
-                        </span>
+                <img src={`https://image.tmdb.org/t/p/original${props.props.backdrop_path}`} alt={props.props.title}/>
+                <div className='featured-text'>
+                    <h1 className='featured-title'>{props.props.title}</h1>
+                    <span>
+                        <strong className='featured-score'>{props.props.vote_average} points</strong>
+                        <strong className='featured-date'>  {props.props.release_date.split("").slice(0, -6).join("")}</strong>
+                    </span>
+                    <p className='featured-overview'>{props.props.overview}</p>
+                    <span>
+                        <button>Play</button>
+                        <button>+ My List</button>
+                    </span>
                 </div>
             </section>
         );
